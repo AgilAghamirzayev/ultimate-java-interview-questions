@@ -8,8 +8,6 @@
         - [What are the 4 pillars of OOPS?](#question-what-are-the-4-pillars-of-oops)
     - [Collections](#collections)
     - [Multithreading](#multithreading)
-    - [SOLID](#solid)
-    - [Design Patterns](#design-patterns)
     - [Lambda](#lambda)
     - [Stream](#stream)
         - [What is the difference between map and flat map](#question-what-is-the-difference-between-map-and-flat-map)
@@ -35,10 +33,12 @@
         - [Java 19 Features](#java-19-features)
         - [Java 20 Features](#java-20-features)
         - [Java 21 Features (LTS)](#java-21-features-lts)
+- [SOLID](#solid)
+- [Design Patterns](#design-patterns)
 - [Spring Boot](#spring-boot)
     - [Core](#core)
-      - [How HTTPS requests flow through the Spring Boot application?](#https://medium.com/javarevisited/top-15-spring-boot-interview-questions-and-answers-for-java-developers-series-24-q-a-on-actuators-7253402c671)
-      - [What happens in the background when a Spring Boot Application is “Run as Java Application”?](#https://medium.com/javarevisited/top-15-spring-boot-interview-questions-and-answers-for-java-developers-series-24-q-a-on-actuators-7253402c671)
+      - [How HTTPS requests flow through the Spring Boot application?](https://medium.com/javarevisited/top-15-spring-boot-interview-questions-and-answers-for-java-developers-series-24-q-a-on-actuators-7253402c671)
+      - [What happens in the background when a Spring Boot Application is “Run as Java Application”?](https://medium.com/javarevisited/top-15-spring-boot-interview-questions-and-answers-for-java-developers-series-24-q-a-on-actuators-7253402c671)
     - [JPA](#jpa)
     - [Caching](#caching)
     - [Transaction](#transaction)
@@ -96,6 +96,14 @@ In java, Abstraction can be achieved in two ways:
 
 - Abstract classes
 - Interfaces
+
+## Collections
+
+## Multithreading
+
+## Lambda
+
+## Stream
 
 ## Stream
 
@@ -394,7 +402,25 @@ Release Date : September, 2017
 
 ---
 
+# SOLID
+
+---
+
+# Design patterns
+
+
+
+---
+
 # Spring Boot
+
+## Core
+
+## JPA
+
+## Caching
+
+## Transaction
 
 ## AOP
 
@@ -469,7 +495,11 @@ Answer:
 
 
 
+---
 
+# Microservices
+
+## Patterns
 
 
 
