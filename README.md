@@ -43,6 +43,16 @@
     - [Caching](#caching)
     - [Transaction](#transaction)
     - [AOP](#aop)
+      - [What is AOP?](#what-is-aop)
+      - [Which design pattern applies to spring AOP?](#which-design-pattern-applies-to-spring-aop)
+      - [What are the benefices of AOP?](#what-are-the-benefices-of-aop)
+      - [AOP use cases](#aop-use-cases)
+      - [Advantages and Disadvantages of AOP](#advantages-and-disadvantages-of-aop)
+      - [AOP terminology](#aop-terminology)
+      - [What advice types are in AOP?](#what-advice-types-are-in-aop)
+      - [What type of weaving do you know?](#what-type-of-weaving-do-you-know)
+      - [What are the differences of Spring AOP and AspectJ?](#what-are-the-differences-of-spring-aop-and-aspectj)
+      - [AOP pointcut execution](#aop-pointcut-execution)
 - [Microservices](#microservices)
     - [Patterns](#patterns)
 - [Algorithms](#algorithms)
@@ -50,7 +60,7 @@
 - [Communication protocols](#communication-protocols)
 - [DevOps](#devops)
     - [Docker](#docker)
-        - [What is the difference between Container vs virtual machine](#question-what-is-the-difference-between-container-vs-virtual-machine)
+        - [What is the difference between Container vs virtual machine?](#question-what-is-the-difference-between-container-vs-virtual-machine)
 - [CI/CD](#cicd)
 - [Git](#git)
 
@@ -68,7 +78,7 @@ Answer:
 
 ![oop.png](images/oop.png)
 
-There are 4 pillars of OOPS are:
+There are four pillars of OOPS:
 
 1. Abstraction
 2. Encapsulation
@@ -82,20 +92,44 @@ Let’s take a look at them:
    This makes your code more organized and easy to understand because you can work with high-level ideas rather than
    getting lost in the complexities of every detail.
 
-Real world examples:
+   Real world examples:
 
-- Car engine: When you drive a car, you don't need to know how the engine works or how the brakes work. You just need to
-  know how to steer the car and how to use the pedals. The car abstracts away all of the complex internal details so
-  that you can focus on driving.
+   - Car engine: When you drive a car, you don't need to know how the engine works or how the brakes work. You just need to
+     know how to steer the car and how to use the pedals. The car abstracts away all the complex internal details so
+     that you can focus on driving.
 
-- Computer: When you use a computer, you don't need to know how the hardware works or how the operating system works.
-  You just need to know how to use the mouse and keyboard and how to open programs and files. The computer abstracts
-  away all of the complex internal details so that you can focus on using the computer to do your work.
+   - Computer: When you use a computer, you don't need to know how the hardware works or how the operating system works.
+     You just need to know how to use the mouse and keyboard and how to open programs and files. The computer abstracts
+     away all the complex internal details so that you can focus on using the computer to do your work.
 
-In java, Abstraction can be achieved in two ways:
+    In java, Abstraction can be achieved in two ways:
 
-- Abstract classes
-- Interfaces
+   - Abstract classes
+   - Interfaces
+
+2. Encapsulation may be used by creating ‘get’ and ‘set’ methods in a class which are used to access the fields of the 
+   object.
+   Typically, the fields are made private while the get and set methods are public.
+
+   To achieve encapsulation in Java:
+   - Declare the variables of a class as private.
+   - Provide public setter and getter methods to modify and view the variables values.
+
+   Benefits of Encapsulation
+   - The fields of a class can be made read-only or write-only.
+   - A class can have total control over what is stored in its fields.
+
+3. Inheritance.
+   Using inheritance means defining a parent-child relationship between classes, by doing so, you can 
+   reuse the code already defined in the parent class.
+   Code re-usability is the biggest advantage of Inheritance.
+
+   _Java does not allow multiple inheritance through classes, but it allows it through interfaces._
+
+
+4. Polymorphism
+
+
 
 ## Collections
 
@@ -113,7 +147,7 @@ In java, Abstraction can be achieved in two ways:
 
 ### JDK 1 Features
 
-Release Date : January 23, 1996
+Release Date: January 23, 1996
 
 - AWT event model
 - Inner classes
@@ -135,7 +169,7 @@ J2SE 1.2 Features
 
 ### J2SE 1.3 Features
 
-Release Date : May 8, 2000
+Release Date: May 8, 2000
 
 - HotSpot JVM
 - Java Naming and Directory Interface (JNDI)
@@ -145,7 +179,7 @@ Release Date : May 8, 2000
 
 ### J2SE 1.4 Features
 
-Release Date : February 6, 2002
+Release Date: February 6, 2002
 
 - assert keyword
 - Regular expressions
@@ -161,7 +195,7 @@ Release Date : February 6, 2002
 
 ### J2SE 5 Features
 
-Release Date : September 30, 2004
+Release Date: September 30, 2004
 
 - Generics
 - Annotations
@@ -175,7 +209,7 @@ Release Date : September 30, 2004
 
 ### Java SE 6 Features
 
-Release Date : December 11, 2006
+Release Date: December 11, 2006
 
 - Scripting Language Support
 - Performance improvements
@@ -188,7 +222,7 @@ Release Date : December 11, 2006
 
 ### Java SE 7 Features
 
-Release Date : July 28, 2011
+Release Date: July 28, 2011
 
 - JVM support for dynamic languages
 - Compressed 64-bit pointers
@@ -208,7 +242,7 @@ Release Date : July 28, 2011
 
 ### Java 8 Features
 
-Release Date : March 18, 2014
+Release Date: March 18, 2014
 
 - Lambda expression support in APIs
 - Stream API
@@ -219,13 +253,13 @@ Release Date : March 18, 2014
 - Unsigned Integer Arithmetic
 - Repeating annotations
 - New Date and Time API
-- Statically-linked JNI libraries
+- Statically linked JNI libraries
 - Launch JavaFX applications from jar files
 - Remove the permanent generation from GC
 
 ### Java 9 Features
 
-Release Date : September, 2017
+Release Date: September 2017
 
 - Java platform module system
 - Interface Private Methods
@@ -282,7 +316,7 @@ Release Date : September, 2017
 - JEP 354 – Switch Expressions Enhancements (Preview)
 - JEP 353 – Reimplement the Legacy Socket API
 - JEP 350 – Dynamic CDS Archive
-- JEP 351 – ZGC: Uncommit Unused Memory
+- JEP 351 – ZGC: Uncommitted Unused Memory
 - FileSystems.newFileSystem() Method
 - DOM and SAX Factories with Namespace Support
 
@@ -427,13 +461,13 @@ Release Date : September, 2017
 ### What is AOP?
 
 Answer:
-- Programming technique based on concept of an Aspect
+- Programming technique based on the concept of an Aspect
 - Aspect encapsulates cross-cutting logic
 - Cross-cutting concerns (concern - logic/functionality)
 
 ![img.png](images/cross-cutting-concern.png)
 
-### Which design pattern apply spring AOP?
+### Which design pattern applies to spring AOP?
 Answer: Proxy design pattern
 
 ### What are the benefices of AOP?
@@ -486,7 +520,7 @@ Answer:
 - _Note: Runtime weaving is the slowest_
 
 
-### What are the differences of Spring AOP and AspectJ
+### What are the differences of Spring AOP and AspectJ?
 
 
 
