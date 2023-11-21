@@ -126,10 +126,21 @@ Let’s take a look at them:
 
    _Java does not allow multiple inheritance through classes, but it allows it through interfaces._
 
-
 4. Polymorphism
+   Poly means many and Morph means forms. Polymorphism is the process in which an object or function takes different forms. 
+   
+   There are 2 types of Polymorphism :
+
+   ✅ Compile Time Polymorphism (Method Overloading)
+
+   ✅ Run Time Polymorphism (Method Overriding)
 
 
+   In Method overloading, two or more methods in one class have the same method name but different arguments. It is called 
+   as Compile time polymorphism because it is decided at compile time which overloaded method will be called.   
+
+   Overriding means when we have two methods with same name and same parameters in parent and child class. Through overriding, 
+   child class can provide specific implementation for the method which is already defined in the parent class.
 
 ## Collections
 
@@ -142,6 +153,31 @@ Let’s take a look at them:
 ## Stream
 
 ### Question: What is the difference between map and flat map
+
+- `map` is used to transform each element of a collection independently and returns a new collection with the 
+transformed elements.
+- `flatMap` is used to transform each element of a collection into a sequence of elements and then flatten the 
+  sequences into a single collection.
+
+In other words, map applies a one-to-one transformation to each element, while flatMap applies a one-to-many 
+transformation and flattens the resulting sequences into a single collection.
+
+Example using map:
+
+    List<String> words = Arrays.asList("Hello", "world");
+    List<Integer> wordLengths = words.stream()
+                                     .map(String::length)
+                                     .collect(Collectors.toList());
+    // Result: [5, 5]
+
+Example using flatMap:
+
+    List<List<Integer>> listOfLists = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4));
+    List<Integer> flattenedList = listOfLists.stream()
+                                             .flatMap(List::stream)
+                                             .collect(Collectors.toList());
+    // Result: [1, 2, 3, 4]
+
 
 ## Java versions and New Features
 
