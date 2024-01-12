@@ -145,6 +145,20 @@ Let’s take a look at them:
 ## Collections
 
 ## Multithreading
+### Question: What is daemon threads?
+
+### Question: What does thread.join() method? 
+
+
+### Question: What is the difference between latency and throughput
+
+- **Latency** - The time to completion of a task. Measured in time units
+- **Throughput** - The amount of tasks completed in a given period. Measured in tasks/time unit
+
+
+
+Answer:
+
 
 ## Lambda
 
