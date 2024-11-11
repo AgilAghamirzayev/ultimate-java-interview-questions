@@ -1,4 +1,4 @@
-# Java String interview Question
+# Java String interview questions
 
 **1. What is a String in Java?**
 
