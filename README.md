@@ -2,7 +2,6 @@
 
 # Table of Contents
 
----
 * # [Java](sections/java)
   * ##  [Java Versions and Features](sections/java/java-versions.md)
   * ##  [String](sections/java/strings.md)
