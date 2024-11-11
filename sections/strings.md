@@ -104,6 +104,8 @@ false
 
 **12. What is Compact Strings**
 [Compact Strings in Java 9](https://www.geeksforgeeks.org/compact-strings-in-java-9-with-examples/)
+
+
 Java 9 has brought the concept of compact Strings back.
 
 This means that whenever we create a String if all the characters of the String can be represented using a byte —
