@@ -3,7 +3,7 @@
 
 **1. What are the 4 pillars of OOPS?**
 
-![oop.png](../images/oop.png)
+![oop.png](../../images/oop.png)
 
 There are four pillars of OOPS:
 

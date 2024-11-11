@@ -2,19 +2,18 @@
 
 # Table of Contents
 
-## - [Java Versions and Features](sections/java-versions.md)
-## - [String](sections/strings.md)
-## - [OOP](sections/oop.md)
+---
+* # [Java](sections/java)
+  * ##  [Java Versions and Features](sections/java/java-versions.md)
+  * ##  [String](sections/java/strings.md)
+  * ##  [OOP](sections/java/oop.md)
+  * ##  [Collections](sections/java/collections.md)
+  * ##  [Stream](sections/java/stream.md)
+  * ##  [Multithreading](sections/java/multithreading.md)
 
-- [Java](#java) 
+---
 
-    - [Collections](#collections)
-    - [Multithreading](#multithreading)
-    - [Lambda](#lambda)
-    - [Stream](#stream)
-        - [What is the difference between map and flat map](#question-what-is-the-difference-between-map-and-flat-map)
-
-- [SOLID](#solid)
+* # [SOLID](#solid)
 - [Design Patterns](#design-patterns)
 - [Spring Boot](#spring-boot)
     - [Core](#core)
@@ -44,61 +43,6 @@
         - [What is the difference between Container vs virtual machine?](#question-what-is-the-difference-between-container-vs-virtual-machine)
 - [CI/CD](#cicd)
 - [Git](#git)
-
-# Java
-
----
-
-## Collections
-
-## Multithreading
-### Question: What is daemon threads?
-
-### Question: What does thread.join() method? 
-
-
-### Question: What is the difference between latency and throughput
-
-- **Latency** - The time to completion of a task. Measured in time units
-- **Throughput** - The amount of tasks completed in a given period. Measured in tasks/time unit
-
-
-
-Answer:
-
-
-## Lambda
-
-## Stream
-
-## Stream
-
-### Question: What is the difference between map and flat map
-
-- `map` is used to transform each element of a collection independently and returns a new collection with the 
-transformed elements.
-- `flatMap` is used to transform each element of a collection into a sequence of elements and then flatten the 
-  sequences into a single collection.
-
-In other words, map applies a one-to-one transformation to each element, while flatMap applies a one-to-many 
-transformation and flattens the resulting sequences into a single collection.
-
-Example using map:
-
-    List<String> words = Arrays.asList("Hello", "world");
-    List<Integer> wordLengths = words.stream()
-                                     .map(String::length)
-                                     .collect(Collectors.toList());
-    // Result: [5, 5]
-
-Example using flatMap:
-
-    List<List<Integer>> listOfLists = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4));
-    List<Integer> flattenedList = listOfLists.stream()
-                                             .flatMap(List::stream)
-                                             .collect(Collectors.toList());
-    // Result: [1, 2, 3, 4]
-
 
 
 # SOLID
